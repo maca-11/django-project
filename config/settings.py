@@ -27,7 +27,6 @@ env.read_env(os.path.join(BASE_DIR, ".env"))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
@@ -151,7 +150,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ログイン後のリダイレクト先
 LOGIN_REDIRECT_URL = '/bbs/'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # ↓ 追加
 default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
