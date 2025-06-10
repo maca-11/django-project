@@ -26,7 +26,7 @@ env.read_env(os.path.join(BASE_DIR, ".env"))
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-f-b(goolejc1y-^k%p0&*m!&qg_5b$x0zalxotme0n=@few*=^'
+SECRET_KEY = 'django-insecure-)w*fon8-xo*58+t5l^5(*7)9c@!^akzk89d@)govy)vf0pwd(9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -138,9 +138,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # 追加
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-SUPERUSER_NAME = env("SUPERUSER_NAME")
-SUPERUSER_EMAIL = env("SUPERUSER_EMAIL")
-SUPERUSER_PASSWORD = env("SUPERUSER_PASSWORD")
 
 LOGIN_REDIRECT_URL = '/bbs/'
