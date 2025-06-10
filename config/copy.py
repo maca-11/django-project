@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env()
 env.read_env(os.path.join(BASE_DIR, ".env"))
 
-SECRET_KEY = 'django-insecure-)w*fon8-xo*58+t5l^5(*7)9c@!^akzk89d@)govy)vf0pwd(9'
+SECRET_KEY = 'django-insecure-f-b(goolejc1y-^k%p0&*m!&qg_5b$x0zalxotme0n=@few*=^'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
@@ -21,20 +21,20 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bbs.apps.BbsConfig',
     'django_bootstrap5',
-    'accounts.apps.AccountsConfig',
-
+    'accounts.apps.AccountsConfig'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', # 追加
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # 追加
 ]
+
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
@@ -48,7 +48,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'bbs.context_processors.search_form',
+                'bbs.context_processors.search_form'
             ],
         },
     },
@@ -79,11 +79,15 @@ TIME_ZONE = 'Asia/Tokyo'
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = "static/"
-STATICFILES_DIRS = [BASE_DIR / 'static'] # 静的ファイル用のディレクトリを追記 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static') # 追加
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'static'] # 静的ファイル用のディレクトリを追記
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # 追加
 
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SUPERUSER_NAME = env("SUPERUSER_NAME")
+SUPERUSER_EMAIL = env("SUPERUSER_EMAIL")
+SUPERUSER_PASSWORD = env("SUPERUSER_PASSWORD")
 
 LOGIN_REDIRECT_URL = '/bbs/'
