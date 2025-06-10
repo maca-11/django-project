@@ -88,24 +88,13 @@ env = environ.Env()
 # .envファイルの読み込み
 env.read_env('.env')
 # .envファイルからSECRET_KEYを読み込み
-
+SECRET_KEY = env('SECRET_KEY')
 # .envファイルからDEBUGの値を取得し、真偽値に変換
 DEBUG = env.bool('DEBUG', default=False)
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': env('DATABASE_ENGINE', default='django.db.backends.sqlite3'),
-        'NAME': env('DATABASE_DB', default=os.path.join(BASE_DIR, 'db.sqlite3')),
-        # 以下は、MySQLやPostgreSQLの場合に設定
-        # 'USER': env('DATABASE_USER', default='django_user'),
-        # 'PASSWORD': env('DATABASE_PASSWORD', default='password'),
-        # 'HOST': env('DATABASE_HOST', default='localhost'),
-        # 'PORT': env('DATABASE_PORT', default='5432'),
-    }
-}
 
 
 # Password validation
@@ -166,3 +155,4 @@ STATIC_ROOT = str(BASE_DIR / "static")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
