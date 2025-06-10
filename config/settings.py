@@ -88,7 +88,7 @@ env = environ.Env()
 # .envファイルの読み込み
 env.read_env('.env')
 # .envファイルからSECRET_KEYを読み込み
-SECRET_KEY = env('SECRET_KEY')
+
 # .envファイルからDEBUGの値を取得し、真偽値に変換
 DEBUG = env.bool('DEBUG', default=False)
 
