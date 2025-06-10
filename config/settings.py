@@ -33,7 +33,6 @@ SECRET_KEY = 'django-insecure-)w*fon8-xo*58+t5l^5(*7)9c@!^akzk89d@)govy)vf0pwd(9
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -82,16 +81,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
-# 環境変数を管理するためのenvオブジェクト作成
-env = environ.Env()
-# .envファイルの読み込み
-env.read_env('.env')
-# .envファイルからSECRET_KEYを読み込み
-
-# .envファイルからDEBUGの値を取得し、真偽値に変換
-DEBUG = env.bool('DEBUG', default=False)
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -127,7 +116,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
