@@ -120,27 +120,19 @@ ALLOWED_HOSTS = ['*']
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATICFILES_DIRS = [BASE_DIR / 'static'] # 静的ファイル用のディレクトリを追記 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# ログイン後のリダイレクト先
-LOGIN_REDIRECT_URL = '/bbs/'
-
-
 # ↓ 追加
 default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
-
 DATABASES = {
     "default": config("DATABASE_URL", default=default_dburl, cast=dburl),
 }
-
 STATIC_URL = "static/"
-#STATIC_ROOT = str(BASE_DIR / "static")
+STATICFILES_DIRS = [BASE_DIR / 'static'] # 静的ファイル用のディレクトリを追記 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static') # 追加
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+LOGIN_REDIRECT_URL = '/bbs/'
